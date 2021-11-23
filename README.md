@@ -1,8 +1,16 @@
-#USE : Install the repo in your folder via 'git clone' command . 
+# Libraries needed
+PIL,
+face_recognition,
+cv2,
+os,
+numpy.
+
+# USE : 
+Install the repo in your folder via 'git clone' command . 
 import using import FacePI.
 Use the desired function with FacePI.function(parameters)
 
-#List of functions:
+# List of functions:
 
 1.borderFaces - highlights the faces in an image by creating a frame around the faces .
 parameters - filename , color(color of border),label (boolean , wether faces should have label)
