@@ -66,7 +66,7 @@ def borderFaces(filename,color,label):
             except Exception:
                 nothing()
         if label:
-            font = ImageFont.truetype('Game Of Squids.ttf', int((x-x2)*0.17))
+            font = ImageFont.truetype('font.tff', int((x-x2)*0.17))
             draw.text((x2, y2), "Person " + str(i + 1), color, font=font)
 
 
