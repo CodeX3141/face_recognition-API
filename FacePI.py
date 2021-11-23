@@ -15,7 +15,7 @@ def rgbValue(arr):
 
 def nothing():
     return 0
-def borderFaces(filename,color):
+def borderFaces(filename,color,label):
 
     image = face_recognition.load_image_file(filename)
     face_loc = face_recognition.face_locations(image)
@@ -65,8 +65,9 @@ def borderFaces(filename,color):
                     img.putpixel((x - i2, y + size + z - thickness), color)
             except Exception:
                 nothing()
-        font = ImageFont.truetype('Game Of Squids.ttf', int((x-x2)*0.17))
-        draw.text((x2, y2), "Person " + str(i + 1), color, font=font)
+        if label:
+            font = ImageFont.truetype('Game Of Squids.ttf', int((x-x2)*0.17))
+            draw.text((x2, y2), "Person " + str(i + 1), color, font=font)
 
 
 
@@ -94,7 +95,7 @@ def highlightFaces(filename):
             dx = i[0]
             dy = i[1]
             [r,g,b] = rgbValue(img.getpixel((x-dx,y+dy)))
-            img.putpixel((x-dx,y+dy),(r,0,0))
+            img.putpixel((x-dx,y+dy),(255-r,255-g,255-b))
 
 
 
@@ -181,31 +182,3 @@ def massPullFaces(image_dir,result_dir):
 
         except Exception:
             nothing()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
