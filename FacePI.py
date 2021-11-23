@@ -15,7 +15,7 @@ def rgbValue(arr):
 
 def nothing():
     return 0
-def borderFaces(filename,thickness,color):
+def borderFaces(filename,color):
 
     image = face_recognition.load_image_file(filename)
     face_loc = face_recognition.face_locations(image)
